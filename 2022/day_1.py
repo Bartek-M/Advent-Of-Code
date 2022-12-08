@@ -1,104 +1,80 @@
 # Advent of code day 1 2022
+# https://adventofcode.com/2022/day/1
 print("Advent of code day 1 2022\n")
 
 # PART I
-print("\n[PART I]")
+class part1:
+    def __init__(self):
+        print("[PART I]")
 
-"""
-https://adventofcode.com/2022/day/1
+        self.elfs = []
+        self.food_cal = []
 
-The Elves take turns writing down the number of Calories contained by the various meals, snacks, rations, etc. that they've brought with them, one item per line. Each Elf separates their own inventory from the previous Elf's inventory (if any) by a blank line.
+        self.file_open()
+        self.create_food_lst()
 
-For example, suppose the Elves finish writing their items' Calories and end up with the following list:
+        # Print out
+        print(f"{len(self.elfs)} elfs are saved")
+        print(f"Elf [{self.food_cal.index(max(self.food_cal))}] has {max(self.food_cal)} calories of the food")
 
-1000
-2000
-3000
+    # Open file
+    def file_open(self):
+        with open("./input/day_1.txt", "r") as f:
+            self.elfs = f.read().split("\n\n")
 
-4000
-
-5000
-6000
-
-7000
-8000
-9000
-
-10000
-
-This list represents the Calories of the food carried by five Elves:
-
-The first Elf is carrying food with 1000, 2000, and 3000 Calories, a total of 6000 Calories.
-The second Elf is carrying one food item with 4000 Calories.
-The third Elf is carrying food with 5000 and 6000 Calories, a total of 11000 Calories.
-The fourth Elf is carrying food with 7000, 8000, and 9000 Calories, a total of 24000 Calories.
-The fifth Elf is carrying one food item with 10000 Calories.
-In case the Elves get hungry and need extra snacks, they need to know which Elf to ask: they'd like to know how many Calories are being carried by the Elf carrying the most Calories. In the example above, this is 24000 (carried by the fourth Elf).
-
-Find the Elf carrying the most Calories. How many total Calories is that Elf carrying?
-"""
-
-# Set variables
-elfs = []
-food_cal = []
-
-# Open file
-with open("./input/day_1.txt", "r") as f:
-    elfs = f.read().split("\n\n")
-
-# Create food list
-for index, elf in enumerate(elfs):
-    for num in elf.split("\n"):
-        if index >= len(food_cal):
-            food_cal.append(int(num))
-        else:
-            food_cal[index] += int(num)
-
-# Print out
-print(f"{len(elfs)} elfs are saved")
-print(f"Elf [{food_cal.index(max(food_cal))}] has {max(food_cal)} calories of the food")
+    # Create food list
+    def create_food_lst(self):
+        for index, elf in enumerate(self.elfs):
+            for num in elf.split("\n"):
+                if index >= len(self.food_cal):
+                    self.food_cal.append(int(num))
+                else:
+                    self.food_cal[index] += int(num)
 
 
-# PART I
-print("\n[PART I]")
+# PART II
+class part2:
+    def __init__(self):
+        print("\n[PART II]")
 
-"""
-By the time you calculate the answer to the Elves' question, they've already realized that the Elf carrying the most Calories of food might eventually run out of snacks.
+        self.elfs = []
+        self.food_cal = []
+        self.top_elfs = ["", 0]
 
-To avoid this unacceptable situation, the Elves would instead like to know the total Calories carried by the top three Elves carrying the most Calories. That way, even if one of those Elves runs out of snacks, they still have two backups.
+        self.file_open()
+        self.create_food_lst()
+        self.top3()
 
-In the example above, the top three Elves are the fourth Elf (with 24000 Calories), then the third Elf (with 11000 Calories), then the fifth Elf (with 10000 Calories). The sum of the Calories carried by these three elves is 45000.
+        # Print out
+        print(f"{len(self.elfs)} elfs are saved")
+        print(f"Elf [{self.top_elfs[0]}] have {self.top_elfs[1]} total calories of the food")
 
-Find the top three Elves carrying the most Calories. How many Calories are those Elves carrying in total?
-"""
+    # Open file
+    def file_open(self):
+        with open("./input/day_1.txt", "r") as f:
+            self.elfs = f.read().split("\n\n")
+
+    # Create food list
+    def create_food_lst(self):
+        for index, elf in enumerate(self.elfs):
+            for num in elf.split("\n"):
+                if index >= len(self.food_cal):
+                    self.food_cal.append(int(num))
+                else:
+                    self.food_cal[index] += int(num)
+
+    # Get top 3 elfs
+    def top3(self):
+        for i in range(3):
+            # Top elfs
+            self.top_elfs[0] += str(self.food_cal.index(max(self.food_cal)))
+            if i != 2: self.top_elfs[0] += ", "
+
+            self.top_elfs[1] += max(self.food_cal) # Total calories
+            self.food_cal.pop(self.food_cal.index(max(self.food_cal))) # Remove current max
 
 
-# Set variables
-elfs = []
-food_cal = []
-top_elfs = ["", 0]
-
-# Open file
-with open("./input/day_1.txt", "r") as f:
-    elfs = f.read().split("\n\n")
-
-# Create food list
-for index, elf in enumerate(elfs):
-    for num in elf.split("\n"):
-        if index >= len(food_cal):
-            food_cal.append(int(num))
-        else:
-            food_cal[index] += int(num)
-
-# Get top 3 elfs
-for i in range(3):
-    # Top elfs
-    top_elfs[0] += str(food_cal.index(max(food_cal)))
-    if i != 2: top_elfs[0] += ", "
-
-    top_elfs[1] += max(food_cal) # Total calories
-    food_cal.pop(food_cal.index(max(food_cal))) # Remove current max
-    
-# Print out
-print(f"{len(elfs)} elfs are saved")
-print(f"Elf [{top_elfs[0]}] have {top_elfs[1]} total calories of the food")
+# Turn on
+if __name__ == "__main__":
+    part1()
+    part2()
