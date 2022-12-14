@@ -2,8 +2,9 @@
 # https://adventofcode.com/2022/day/1
 print("Advent of code day 1 2022\n")
 
+
 # PART I
-class part1:
+class part_1:
     def __init__(self):
         print("[PART I]")
 
@@ -33,7 +34,7 @@ class part1:
 
 
 # PART II
-class part2:
+class part_2:
     def __init__(self):
         print("\n[PART II]")
 
@@ -43,7 +44,7 @@ class part2:
 
         self.file_open()
         self.create_food_lst()
-        self.top3()
+        self.top_3()
 
         # Print out
         print(f"{len(self.elfs)} elfs are saved")
@@ -64,7 +65,7 @@ class part2:
                     self.food_cal[index] += int(num)
 
     # Get top 3 elfs
-    def top3(self):
+    def top_3(self):
         for i in range(3):
             # Top elfs
             self.top_elfs[0] += str(self.food_cal.index(max(self.food_cal)))
@@ -76,5 +77,5 @@ class part2:
 
 # Turn on
 if __name__ == "__main__":
-    part1()
-    part2()
+    part_1()
+    part_2()
