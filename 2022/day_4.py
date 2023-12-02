@@ -9,29 +9,29 @@ class part_1:
         print("[PART I]")
 
         # Set variables
-        self.elfs = []
+        self.elves = []
         self.overlaps = 0
 
         self.file_open()
         self.overlaps_check()
 
         # Print out
-        print(f"Checked: {len(self.elfs)} pairs\tTotal: {len(self.elfs) * 2} elfs\nFound: {self.overlaps} overlaping pairs")
+        print(f"Checked: {len(self.elves)} pairs\tTotal: {len(self.elves) * 2} elves\nFound: {self.overlaps} overlaping pairs")
 
     # Open file
     def file_open(self):
         with open("./input/day_4.txt", "r") as f:
-            self.elfs = [(line.split(",")[0], line.split(",")[1]) for line in f.read().split("\n")]
+            self.elves = [(line.split(",")[0], line.split(",")[1]) for line in f.read().split("\n")]
 
     # Check overlaps
     def overlaps_check(self):
-        for pair in self.elfs:
+        for pair in self.elves:
             elf_1 = pair[0].split("-")
             elf_2 = pair[1].split("-")
 
-            if int(elf_2[0]) in range(int(elf_1[0]), int(elf_1[1])+1) and int(elf_2[1]) in range(int(elf_1[0]), int(elf_1[1])+1):
+            if int(elf_2[0]) in range(int(elf_1[0]), int(elf_1[1]) + 1) and int(elf_2[1]) in range(int(elf_1[0]), int(elf_1[1]) + 1):
                 self.overlaps += 1
-            elif int(elf_1[0]) in range(int(elf_2[0]), int(elf_2[1])+1) and int(elf_1[1]) in range(int(elf_2[0]), int(elf_2[1])+1):
+            elif int(elf_1[0]) in range(int(elf_2[0]), int(elf_2[1]) + 1) and int(elf_1[1]) in range(int(elf_2[0]), int(elf_2[1]) + 1):
                 self.overlaps += 1
 
 
@@ -41,29 +41,29 @@ class part_2:
         print("\n[PART II]")
 
         # Set variables
-        self.elfs = []
+        self.elves = []
         self.overlaps = 0
 
         self.file_open()
         self.overlaps_check()
 
         # Print out
-        print(f"Checked: {len(self.elfs)} pairs\tTotal: {len(self.elfs) * 2} elfs\nFound: {self.overlaps} overlaping pairs")
+        print(f"Checked: {len(self.elves)} pairs\tTotal: {len(self.elves) * 2} elves\nFound: {self.overlaps} overlaping pairs")
 
     # Open file
     def file_open(self):
         with open("./input/day_4.txt", "r") as f:
-            self.elfs = [(line.split(",")[0], line.split(",")[1]) for line in f.read().split("\n")]
+            self.elves = [(line.split(",")[0], line.split(",")[1]) for line in f.read().split("\n")]
 
     # Check overlaps
     def overlaps_check(self):
-        for pair in self.elfs:
+        for pair in self.elves:
             elf_1 = pair[0].split("-")
             elf_2 = pair[1].split("-")
 
-            if int(elf_2[0]) in range(int(elf_1[0]), int(elf_1[1])+1) or int(elf_2[1]) in range(int(elf_1[0]), int(elf_1[1])+1):
+            if int(elf_2[0]) in range(int(elf_1[0]), int(elf_1[1]) + 1) or int(elf_2[1]) in range(int(elf_1[0]), int(elf_1[1]) + 1):
                 self.overlaps += 1
-            elif int(elf_1[0]) in range(int(elf_2[0]), int(elf_2[1])+1) or int(elf_1[1]) in range(int(elf_2[0]), int(elf_2[1])+1):
+            elif int(elf_1[0]) in range(int(elf_2[0]), int(elf_2[1]) + 1) or int(elf_1[1]) in range(int(elf_2[0]), int(elf_2[1]) + 1):
                 self.overlaps += 1
 
 

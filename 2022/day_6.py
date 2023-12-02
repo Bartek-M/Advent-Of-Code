@@ -2,9 +2,6 @@
 # https://adventofcode.com/2022/day/6
 print("Advent of code day 6 2022\n")
 
-# Imports
-import re
-
 
 # Part I
 class part_1:
