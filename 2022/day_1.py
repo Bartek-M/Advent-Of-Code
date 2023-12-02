@@ -23,7 +23,7 @@ class Task:
 
     # Open file
     def file_open(self):
-        with open("./input/day_1.txt", "r") as f:
+        with open("./input/day_1.in", "r") as f:
             self.elves = f.read().split("\n\n")
 
     # Create food list

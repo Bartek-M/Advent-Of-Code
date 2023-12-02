@@ -20,9 +20,9 @@ class part_1:
 
     # Open file
     def file_open(self):
-        with open("./input/day_8.txt", "r") as f:
+        with open("./input/day_8.in", "r") as f:
             self.forest = [list(line) for line in f.read().split("\n")]
-    
+
     # Check visibility
     def check_vis(self, pos, tree):
         x, y = pos
@@ -54,14 +54,14 @@ class part_1:
 
     # Calculate visible trees
     def calc_trees(self):
-        edge = len(self.forest[0]) * 2 + (len(self.forest) - 2) * 2 # Top + bottom, left + right
+        edge = len(self.forest[0]) * 2 + (len(self.forest) - 2) * 2  # Top + bottom, left + right
 
         for ind, row in enumerate(self.forest):
             if ind == 0 or ind == len(self.forest) - 1:
                 continue
 
             for pos, tree in enumerate(row[1:-1]):
-                self.visible_trees += self.check_vis((pos+1, ind), int(tree))
+                self.visible_trees += self.check_vis((pos + 1, ind), int(tree))
 
         self.visible_trees += edge
 
@@ -83,9 +83,9 @@ class part_2:
 
     # Open file
     def file_open(self):
-        with open("./input/day_8.txt", "r") as f:
+        with open("./input/day_8.in", "r") as f:
             self.forest = [list(line) for line in f.read().split("\n")]
-    
+
     # Check visibility
     def check_vis(self, pos, tree):
         x, y = pos
@@ -100,7 +100,7 @@ class part_2:
                 current_x = 1
                 continue
 
-            if int(self.forest[y][i]) > tree: # x_trees[current_x]: 
+            if int(self.forest[y][i]) > tree:  # x_trees[current_x]:
                 x_trees[current_x] = int(self.forest[y][i])
                 x_match[current_x] += 1
 
@@ -109,11 +109,11 @@ class part_2:
             if i == y:
                 current_y = 1
                 continue
-            
-            if int(self.forest[i][x]) > tree: #y_trees[current_y]:
+
+            if int(self.forest[i][x]) > tree:  # y_trees[current_y]:
                 y_trees[current_y] = int(self.forest[i][x])
                 y_match[current_y] += 1
-            
+
         # Check scenic_score
         scenic_score = x_match[0] * x_match[1] * y_match[0] * y_match[1]
 

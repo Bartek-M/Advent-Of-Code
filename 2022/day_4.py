@@ -20,7 +20,7 @@ class part_1:
 
     # Open file
     def file_open(self):
-        with open("./input/day_4.txt", "r") as f:
+        with open("./input/day_4.in", "r") as f:
             self.elves = [(line.split(",")[0], line.split(",")[1]) for line in f.read().split("\n")]
 
     # Check overlaps
@@ -52,7 +52,7 @@ class part_2:
 
     # Open file
     def file_open(self):
-        with open("./input/day_4.txt", "r") as f:
+        with open("./input/day_4.in", "r") as f:
             self.elves = [(line.split(",")[0], line.split(",")[1]) for line in f.read().split("\n")]
 
     # Check overlaps

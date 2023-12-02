@@ -22,7 +22,7 @@ class part_1:
 
     # Open file
     def file_open(self):
-        with open("./input/day_5.txt", "r") as f:
+        with open("./input/day_5.in", "r") as f:
             cargo_done = False
 
             # Loop through lines
@@ -35,8 +35,8 @@ class part_1:
                 if line[1] == "1":
                     cargo_done = True
                     continue
-                
-                if not cargo_done: # Cargo read
+
+                if not cargo_done:  # Cargo read
                     now = True
                     num = 0
 
@@ -48,22 +48,24 @@ class part_1:
                         if not now and i % 2 != 0:
                             now = True
                             continue
-                        
+
                         # Adding to cargo list
-                        num += 1 # New block
-                        now = False # Don't turn next time
+                        num += 1  # New block
+                        now = False  # Don't turn next time
 
                         # Ensure char isn't a space
                         if line[i] == " ":
                             continue
 
                         # New block
-                        if num not in self.cargo: 
+                        if num not in self.cargo:
                             self.cargo[num] = []
 
                         self.cargo[num].append(line[i])
-                elif line[0] == "m": # Moves read
-                    self.moves.append((int(line.split(" ")[1]), int(line.split(" ")[3]), int(line.split(" ")[5]))) # Amount, from block, to block
+                elif line[0] == "m":  # Moves read
+                    self.moves.append(
+                        (int(line.split(" ")[1]), int(line.split(" ")[3]), int(line.split(" ")[5]))
+                    )  # Amount, from block, to block
 
     # Moving cargo
     def moving_cargo(self):
@@ -97,7 +99,7 @@ class part_2:
 
     # Open file
     def file_open(self):
-        with open("./input/day_5.txt", "r") as f:
+        with open("./input/day_5.in", "r") as f:
             cargo_done = False
 
             # Loop through lines
@@ -110,8 +112,8 @@ class part_2:
                 if line[1] == "1":
                     cargo_done = True
                     continue
-                
-                if not cargo_done: # Cargo read
+
+                if not cargo_done:  # Cargo read
                     now = True
                     num = 0
 
@@ -123,22 +125,24 @@ class part_2:
                         if not now and i % 2 != 0:
                             now = True
                             continue
-                        
+
                         # Adding to cargo list
-                        num += 1 # New block
-                        now = False # Don't turn next time
+                        num += 1  # New block
+                        now = False  # Don't turn next time
 
                         # Ensure char isn't a space
                         if line[i] == " ":
                             continue
 
                         # New block
-                        if num not in self.cargo: 
+                        if num not in self.cargo:
                             self.cargo[num] = []
 
                         self.cargo[num].append(line[i])
-                elif line[0] == "m": # Moves read
-                    self.moves.append((int(line.split(" ")[1]), int(line.split(" ")[3]), int(line.split(" ")[5]))) # Amount, from block, to block
+                elif line[0] == "m":  # Moves read
+                    self.moves.append(
+                        (int(line.split(" ")[1]), int(line.split(" ")[3]), int(line.split(" ")[5]))
+                    )  # Amount, from block, to block
 
     # Moving cargo
     def moving_cargo(self):
@@ -154,7 +158,7 @@ class part_2:
     def top_cargo(self):
         for cargo in sorted(self.cargo):
             self.top += str(self.cargo[cargo][0])
-            
+
 
 # Run
 if __name__ == "__main__":

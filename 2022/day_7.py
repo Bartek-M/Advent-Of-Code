@@ -4,6 +4,7 @@ print("Advent of code day 7 2022\n")
 
 # NOT FINISHED
 
+
 # Part I
 class part_1:
     def __init__(self):
@@ -26,7 +27,7 @@ class part_1:
 
     # Open file
     def file_open(self):
-        with open("./input/day_7.txt", "r") as f:
+        with open("./input/day_7.in", "r") as f:
             self.commands = [line for line in f.read().split("\n")]
             self.commands.append("$ ")
 
@@ -53,9 +54,9 @@ class part_1:
 
                     current_dir = ls
                     print(current, current_dir)
-                    
+
                     # Reset listing
-                    ls = {} 
+                    ls = {}
                     file_sum = 0
 
                 # Change directory
@@ -70,7 +71,7 @@ class part_1:
                         current.append(current_cd)
 
                 continue
-            
+
             # File listing
             cmd_file = cmd.split(" ")[0] if "dir" not in cmd else {}
             ls[cmd.split(" ")[1]] = cmd_file
@@ -85,6 +86,7 @@ class part_1:
     # Calculate total sum
     def total_sum(self):
         pass
+
 
 # Run
 if __name__ == "__main__":

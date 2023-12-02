@@ -6,6 +6,14 @@
 - Starts on 1 December
 - Ends on 25 December
 
+## Requirements
+- Python 3.8 or above
+
+## Setup
+- create `input/` folder in the task directory
+- create `input/day_N.in` with test input
+- run desired script
+
 ## Available Years
 - 2022
 - 2023
