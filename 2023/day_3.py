@@ -1,6 +1,7 @@
-# Advent of code day 3 2023
+# Advent of code Day 3 | 2023
 # https://adventofcode.com/2023/day/3
-print("Advent of code day 3 2023\n")
+print("Advent of code Day 3 | 2023\n")
+import time
 
 with open("./input/day_3.in", "r") as f:
     data = [list(line.strip()) for line in f.readlines()]
@@ -43,6 +44,7 @@ class Node:
         return None
 
 
+start_1 = time.time()
 sum_nodes = 0
 
 for i in range(len(data)):
@@ -62,7 +64,7 @@ for i in range(len(data)):
 
         current = ""
 
-print("[PART 1]", sum_nodes)
+print(f"[PART 1]  Time: {(time.time() - start_1):.4f}s  Result: {sum_nodes}")
 
 
 # Part 2
@@ -99,7 +101,7 @@ class Node:
 
         return None
 
-
+start_2 = time.time()
 nodes = {}
 sum_nodes = 0
 
@@ -134,4 +136,4 @@ for key in nodes:
 
     sum_nodes += node_list[0].value * node_list[1].value
 
-print("[PART 2]", sum_nodes)
+print(f"[PART 2]  Time: {(time.time() - start_2):.4f}s  Result: {sum_nodes}")

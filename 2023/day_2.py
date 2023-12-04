@@ -1,6 +1,7 @@
-# Advent of code day 2 2023
+# Advent of code Day 2 | 2023
 # https://adventofcode.com/2023/day/2
-print("Advent of code day 2 2023\n")
+print("Advent of code Day 2 | 2023\n")
+import time
 
 with open("./input/day_2.in", "r") as f:
     data = {}
@@ -10,6 +11,7 @@ with open("./input/day_2.in", "r") as f:
         data[int(line[0].replace("Game ", ""))] = line[1].replace(",", ";").split("; ")  # Game_ID: [list of shown cubes]
 
 # Part 1
+start_1 = time.time()
 cubes = {"red": 12, "green": 13, "blue": 14}
 sum = 0
 
@@ -29,10 +31,11 @@ for game_id in data.keys():
     if allow:
         sum += game_id
 
-print("[PART 1]", sum)
+print(f"[PART 1]  Time: {(time.time() - start_1):.4f}s  Result: {sum}")
 
 
 # Part 2
+start_2 = time.time()
 sum = 0
 
 for game_id in data.keys():
@@ -50,4 +53,4 @@ for game_id in data.keys():
 
     sum += multi
 
-print("[PART 2]", sum)
+print(f"[PART 2]  Time: {(time.time() - start_2):.4f}s  Result: {sum}")

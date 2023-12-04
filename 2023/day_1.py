@@ -1,11 +1,13 @@
-# Advent of code day 1 2023
+# Advent of code Day 1 | 2023
 # https://adventofcode.com/2023/day/1
-print("Advent of code day 1 2023\n")
+print("Advent of code Day 1 | 2023\n")
+import time
 
 with open("./input/day_1.in", "r") as f:
     data = [line.strip() for line in f.readlines()]
 
 # Part 1
+start_1 = time.time()
 sum = 0
 
 for text in data:
@@ -26,10 +28,11 @@ for text in data:
     if num:
         sum += int("".join(num))
 
-print("[PART 1]", sum)
+print(f"[PART 1]  Time: {(time.time() - start_1):.4f}s  Result: {sum}")
 
 
 # Part 2
+start_2 = time.time()
 digits = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
 sum = 0
 
@@ -63,4 +66,4 @@ for text in data:
 
     sum += int("".join(num))
 
-print("[PART 2]", sum)
+print(f"[PART 2]  Time: {(time.time() - start_2):.4f}s  Result: {sum}")

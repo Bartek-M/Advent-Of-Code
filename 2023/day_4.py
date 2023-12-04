@@ -1,7 +1,7 @@
-# Advent of code day 4 2023
+# Advent of code Day 4 | 2023
 # https://adventofcode.com/2023/day/4
-print("Advent of code day 4 2023\n")
-
+print("Advent of code Day 4 | 2023\n")
+import time
 from collections import deque
 
 with open("./input/day_4.in", "r") as f:
@@ -17,6 +17,7 @@ with open("./input/day_4.in", "r") as f:
         data[int(line[0].replace("Card ", ""))] = [winning, selected]  # Game_ID: [winning, selected]
         
 # Part 1
+start_1 = time.time()
 sum = 0
 
 for card in data.values():
@@ -33,13 +34,16 @@ for card in data.values():
     
     sum += current
 
-print("[PART 1]", sum)
+print(f"[PART 1]  Time: {(time.time() - start_1):.4f}s  Result: {sum}")
 
 
 # Part 2
+start_2 = time.time()
 cards = deque(data.keys())
+
 checked = {}
 empty = set()
+
 instances = 0
 
 while cards:
@@ -66,5 +70,4 @@ while cards:
 
     cards.extend(checked[current])
 
-print("[PART 2]", instances)
-
+print(f"[PART 2]  Time: {(time.time() - start_2):.4f}s  Result: {instances}")
