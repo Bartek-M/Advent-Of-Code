@@ -18,3 +18,4 @@
 
 [ [Day 9](https://adventofcode.com/2023/day/9) ] **Mirage Maintenance** - `(Sequence finding)`
 
+[ [Day 10](https://adventofcode.com/2023/day/10) ] **Pipe Maze** - `(Maze tracking)`
