@@ -21,3 +21,7 @@
 [ [Day 10](https://adventofcode.com/2023/day/10) ] **Pipe Maze** - `(Maze tracking)`
 
 [ [Day 11](https://adventofcode.com/2023/day/11) ] **Cosmic Expansion** - `(Distance checking)`
+
+[ [Day 15](https://adventofcode.com/2023/day/15) ] **Lens Library** - `(Hash generating, dict assigning)`
+
+[ [Day 16](https://adventofcode.com/2023/day/16) ] **The Floor Will Be Lava** - `(Route tracking)`
