@@ -25,3 +25,5 @@
 [ [Day 15](https://adventofcode.com/2023/day/15) ] **Lens Library** - `(Hash generating, dict assigning)`
 
 [ [Day 16](https://adventofcode.com/2023/day/16) ] **The Floor Will Be Lava** - `(Route tracking)`
+
+[ [Day 18](https://adventofcode.com/2023/day/18) ] **Lavaduct Lagoon** - `(Polygon volume calculation)`
