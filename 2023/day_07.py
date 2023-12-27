@@ -8,22 +8,6 @@ with open("./input/day_7.in", "r") as f:
 
 
 # Part 1
-start_1 = time.time()
-CHARS = ["2", "3", "4", "5", "6", "7", "8", "9", "T", "J", "Q", "K", "A"]
-
-"""
-Types:
-1 - High card
-2 - One pair
-3 - Two pair
-4 - Three of kind
-5 - Full house
-6 - Four of kind
-7 - Five of kind
-"""
-types = {}
-
-
 def compare_hand(hand_1, hand_2):
     if not hand_2:
         return hand_1
@@ -55,6 +39,22 @@ def sort_hands(lst):
             lst[i] = current
 
     return lst
+
+
+start_1 = time.time()
+CHARS = ["2", "3", "4", "5", "6", "7", "8", "9", "T", "J", "Q", "K", "A"]
+
+"""
+Types:
+1 - High card
+2 - One pair
+3 - Two pair
+4 - Three of kind
+5 - Full house
+6 - Four of kind
+7 - Five of kind
+"""
+types = {}
 
 
 for hand in data:
@@ -92,11 +92,6 @@ print(f"[PART 1]  Time: {(time.time() - start_1):.4f}s  Result: {sum}")
 
 
 # Part 2
-start_2 = time.time()
-CHARS = ["J", "2", "3", "4", "5", "6", "7", "8", "9", "T", "Q", "K", "A"]
-types = {}
-
-
 def compare_hand(hand_1, hand_2):
     if not hand_2:
         return hand_1
@@ -128,6 +123,11 @@ def sort_hands(lst):
             lst[i] = current
 
     return lst
+
+
+start_2 = time.time()
+CHARS = ["J", "2", "3", "4", "5", "6", "7", "8", "9", "T", "Q", "K", "A"]
+types = {}
 
 
 for hand in data:

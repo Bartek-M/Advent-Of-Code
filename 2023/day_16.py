@@ -8,9 +8,6 @@ with open("./input/day_16.in", "r") as f:
 
 
 # Part 1
-start_1 = time.time()
-
-
 def track_route(pos, direct, grid, added):
     x, y = pos
     dx, dy = direct
@@ -34,15 +31,14 @@ def track_route(pos, direct, grid, added):
 
     return added
 
+
+start_1 = time.time()
 
 result = len(set(map(lambda x: (x[0], x[1]), track_route((0, 0), (1, 0), data, set()))))
 print(f"[PART 1]  Time: {((time.time() - start_1) * 10):.2f} ds  Result: {result}")
 
 
 # Part 2
-start_2 = time.time()
-
-
 def track_route(pos, direct, grid, added):
     x, y = pos
     dx, dy = direct
@@ -67,6 +63,7 @@ def track_route(pos, direct, grid, added):
     return added
 
 
+start_2 = time.time()
 max_val = 0
 
 for i in range(len(data[0])):  # TOP + BOTTOM

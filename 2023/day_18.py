@@ -8,9 +8,6 @@ with open("./input/day_18.in", "r") as f:
 
 
 # Part 1
-start_1 = time.time()
-
-
 def calc_volume(corners: list, perimeter: int) -> int:
     return (
         abs(sum((corners[i - 1][1] + corners[i][1]) * (corners[i - 1][0] - corners[i][0]) for i in range(len(corners)))) // 2
@@ -18,6 +15,8 @@ def calc_volume(corners: list, perimeter: int) -> int:
         + 1
     )
 
+
+start_1 = time.time()
 
 corners = []
 perimeter = 0
@@ -42,9 +41,6 @@ print(f"[PART 1]  Time: {((time.time() - start_1) * 10):.2f} ds  Result: {result
 
 
 # Part 2
-start_2 = time.time()
-
-
 def calc_volume(corners: list, perimeter: int) -> int:
     return (
         abs(sum((corners[i - 1][1] + corners[i][1]) * (corners[i - 1][0] - corners[i][0]) for i in range(len(corners)))) // 2
@@ -52,6 +48,8 @@ def calc_volume(corners: list, perimeter: int) -> int:
         + 1
     )
 
+
+start_2 = time.time()
 
 corners = []
 perimeter = 0
